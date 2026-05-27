@@ -106,7 +106,11 @@ function UniApp() {
   return (
     <div style={{
       display: 'flex', justifyContent: 'center', alignItems: 'center',
-      minHeight: '100vh', background: '#E5E2DC', padding: 20,
+      width: '100%',
+      height: '100%',
+      background: 'var(--wrapper-bg)',
+      padding: 'var(--wrapper-padding)',
+      overflow: 'hidden',
     }}>
       <IOSDevice dark={isDark}>
         <div style={{ height: '100%', position: 'relative', overflow: 'hidden' }}>
