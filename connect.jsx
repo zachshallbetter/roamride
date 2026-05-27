@@ -175,7 +175,7 @@ function ExploreResults({ vibes, onUnlock, onEarn, onStats }) {
 }
 
 /* ━━━ ENHANCED ACTIVE SESSION ━━━ */
-function ActiveSession({ item, onReturn }) {
+function ActiveSession({ item, onReturn, onClose, onRentals }) {
   const [mins] = React.useState(120);
   const [show, setShow] = React.useState(false);
   const [time, setTime] = React.useState(0);
@@ -187,7 +187,26 @@ function ActiveSession({ item, onReturn }) {
   const glowScale = 1 + Math.sin(time / 1000) * 0.06;
 
   return (
-    <div style={{ height: '100%', display: 'flex', flexDirection: 'column', background: '#2A2520', paddingTop: 58 }}>
+    <div style={{ height: '100%', display: 'flex', flexDirection: 'column', background: '#2A2520', paddingTop: 58, position: 'relative' }}>
+      {/* Top Floating Navigation */}
+      {(onClose || onRentals) && (
+        <div style={{ position: 'absolute', top: 58, left: 20, right: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center', zIndex: 10 }}>
+          {onClose ? (
+            <Press onTap={onClose} scale={0.9}>
+              <div style={{ width: 36, height: 36, borderRadius: 18, background: 'rgba(255,255,255,0.08)', border: '1.5px solid rgba(255,255,255,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)' }}>
+                {I.back('#fff')}
+              </div>
+            </Press>
+          ) : <div />}
+          {onRentals ? (
+            <Press onTap={onRentals} scale={0.9}>
+              <div style={{ padding: '8px 14px', borderRadius: 18, background: 'rgba(255,255,255,0.08)', border: '1.5px solid rgba(255,255,255,0.08)', fontSize: 12, fontWeight: 700, color: '#fff', fontFamily: C.font, backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)' }}>
+                My Rentals
+              </div>
+            </Press>
+          ) : <div />}
+        </div>
+      )}
       <ContourBG dark />
       <AmbientParticles time={time} selectedColors={[`${C.orange}15`, `${C.orange}10`, 'rgba(255,255,255,0.03)']} />
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'relative', zIndex: 1, padding: '0 28px' }}>

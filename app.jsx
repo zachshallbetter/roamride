@@ -47,7 +47,7 @@ function UniApp() {
       case 'renterPickup':
         return <RenterPickup nav={(s) => setState(s === 'start' ? 'field' : s === 'renterActive' ? 'active' : s)} />;
       case 'active':
-        return <ActiveSession item={activeItem} onReturn={() => setState('renterReturn')} />;
+        return <ActiveSession item={activeItem} onReturn={() => setState('renterReturn')} onClose={() => setState('field')} onRentals={() => setState('myRentals')} />;
       case 'renterReturn':
         return <RenterReturn nav={(s) => { if (s === 'start' || s === 'field') { setTrustLevel(l => Math.min(4, l + 1)); backToField(); } else setState(s); }} />;
       case 'renterActive':
@@ -199,7 +199,7 @@ function UniApp() {
               )}
 
               {/* Filter chips */}
-              <div style={{ position: 'absolute', marginTop: 20, top: activeItem ? 140 : 104, left: 0, right: 0, zIndex: 32, display: 'flex', gap: 5, padding: '0 20px', overflowX: 'auto' }}>
+              <div style={{ position: 'absolute', marginTop: 10, top: activeItem ? 140 : 104, left: 0, right: 0, zIndex: 32, display: 'flex', gap: 5, padding: '0 20px', overflowX: 'auto' }}>
                 {[{ id: null, label: 'All' }, { id: 'bike', label: 'Bikes' }, { id: 'camera', label: 'Cameras' }, { id: 'paddle', label: 'Water' }, { id: 'tool', label: 'Tools' }, { id: 'scooter', label: 'Scooters' }].map(f => (
                   <Press key={f.id || 'all'} onTap={() => setFilterType(f.id)} scale={0.93}>
                     <div style={{ padding: '5px 12px', borderRadius: 12, background: filterType === f.id ? C.orange : C.white, fontSize: 11, fontWeight: 700, fontFamily: C.font, color: filterType === f.id ? '#fff' : C.text2, whiteSpace: 'nowrap', boxShadow: '0 1px 4px rgba(0,0,0,0.06)', transition: 'all 0.2s ease' }}>{f.label}</div>

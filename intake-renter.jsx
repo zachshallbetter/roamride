@@ -481,7 +481,7 @@ function RenterReturn({ nav }) {
 
 /* ━━━━━ RENTER: ACTIVE (reuses ActiveSession) ━━━━━ */
 function RenterActive({ nav }) {
-  return <ActiveSession item={{ name: 'E-Bike Cruiser', type: 'bike', color: ['#FF9A56','#FF6B35'] }} onReturn={() => nav('renterReturn')} />;
+  return <ActiveSession item={{ name: 'E-Bike Cruiser', type: 'bike', color: ['#FF9A56','#FF6B35'] }} onReturn={() => nav('renterReturn')} onClose={() => nav('field')} onRentals={() => nav('myRentals')} />;
 }
 
 Object.assign(window, { RenterBooking, RenterPayment, RenterProof, RenterConfirm, RenterPickup, RenterReturn, RenterActive });
