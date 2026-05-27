@@ -117,7 +117,20 @@ function UniApp() {
             <>
               <div style={{ position: 'absolute', inset: 0, background: C.bg }} />
               <NoiseOverlay opacity={0.02} />
-              <ContourBG />
+
+              {/* Floating Header Glass Backing */}
+              <div style={{
+                position: 'absolute',
+                top: 0, left: 0, right: 0,
+                height: activeItem ? 190 : 160,
+                background: 'linear-gradient(to bottom, rgba(243, 240, 235, 0.96) 65%, rgba(243, 240, 235, 0.8) 82%, transparent)',
+                backdropFilter: 'blur(12px) saturate(130%)',
+                WebkitBackdropFilter: 'blur(12px) saturate(130%)',
+                zIndex: 25,
+                transition: 'height 0.3s ease',
+                pointerEvents: 'none',
+                borderBottom: '1px solid rgba(0,0,0,0.03)',
+              }} />
 
               {/* Header */}
               <div style={{ position: 'absolute', top: activeItem ? 100 : 56, left: 0, right: 0, zIndex: 30, padding: '6px 20px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', transition: 'top 0.3s ease' }}>
@@ -138,7 +151,7 @@ function UniApp() {
               )}
 
               {/* Field items — draggable zone */}
-              <div {...panHandlers} style={{ position: 'absolute', inset: 0, top: activeItem ? 140 : 110, bottom: 80, touchAction: 'none', cursor: 'grab' }}>
+              <div {...panHandlers} style={{ position: 'absolute', inset: 0, bottom: 80, touchAction: 'none', cursor: 'grab' }}>
                 {/* Parallax contours (move slower) */}
                 <div style={{ position: 'absolute', inset: 0, transform: `translate(${panOffset.x * 0.3}px, ${panOffset.y * 0.3}px)`, transition: panStart.current ? 'none' : 'transform 0.3s ease' }}>
                   <ContourBG />

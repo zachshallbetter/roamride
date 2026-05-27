@@ -10,10 +10,10 @@ const FIELD_ITEMS = [
 ];
 
 const EARN_ITEMS = [
-  { id: 'e1', name: 'E-bikes', price: '$120–340/mo', type: 'bike', rating: 'High', distance: 'demand', vibe: 'High demand nearby', deposit: '', instant: false, verified: false, x: 40, y: 25, phase: 0.5, amp: 5 },
-  { id: 'e2', name: 'Cameras', price: '$80–200/mo', type: 'camera', rating: 'Low', distance: 'supply', vibe: 'Low supply in area', deposit: '', instant: false, verified: false, x: 70, y: 18, phase: 1.8, amp: 4 },
-  { id: 'e3', name: 'Paddleboards', price: '$60–180/mo', type: 'paddle', rating: 'Weekend', distance: 'spike', vibe: 'Weekend spike demand', deposit: '', instant: false, verified: false, x: 18, y: 35, phase: 2.5, amp: 6 },
-  { id: 'e4', name: 'Tools', price: '$40–120/mo', type: 'tool', rating: 'Popular', distance: 'demand', vibe: 'Always in demand', deposit: '', instant: false, verified: false, x: 60, y: 42, phase: 3.2, amp: 5 },
+  { id: 'e1', name: 'E-bikes', price: '$120–340/mo', type: 'bike', rating: 'High', distance: 'demand', vibe: 'High demand nearby', deposit: '', instant: false, verified: false, x: 40, y: 35, phase: 0.5, amp: 5 },
+  { id: 'e2', name: 'Cameras', price: '$80–200/mo', type: 'camera', rating: 'Low', distance: 'supply', vibe: 'Low supply in area', deposit: '', instant: false, verified: false, x: 70, y: 30, phase: 1.8, amp: 4 },
+  { id: 'e3', name: 'Paddleboards', price: '$60–180/mo', type: 'paddle', rating: 'Weekend', distance: 'spike', vibe: 'Weekend spike demand', deposit: '', instant: false, verified: false, x: 18, y: 45, phase: 2.5, amp: 6 },
+  { id: 'e4', name: 'Tools', price: '$40–120/mo', type: 'tool', rating: 'Popular', distance: 'demand', vibe: 'Always in demand', deposit: '', instant: false, verified: false, x: 60, y: 52, phase: 3.2, amp: 5 },
 ];
 
 /* ── Contour line background ── */

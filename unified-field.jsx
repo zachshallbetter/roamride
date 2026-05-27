@@ -2,10 +2,10 @@
 
 /* ── Field items with photos ── */
 const UNI_ITEMS = [
-  { id: 'f1', name: 'E-Bike Cruiser', price: '$18/hr', type: 'bike', rating: '4.9', distance: '0.6 mi', vibe: 'Perfect for a sunset loop.', deposit: '$45', instant: true, verified: true, x: 58, y: 14, phase: 0, amp: 5, saved: '$15' },
+  { id: 'f1', name: 'E-Bike Cruiser', price: '$18/hr', type: 'bike', rating: '4.9', distance: '0.6 mi', vibe: 'Perfect for a sunset loop.', deposit: '$45', instant: true, verified: true, x: 58, y: 28, phase: 0, amp: 5, saved: '$15' },
   { id: 'f2', name: 'Paddleboard', price: '$22/hr', type: 'paddle', rating: '4.8', distance: '0.3 mi', vibe: 'Calm water. Zero effort.', deposit: '$30', instant: true, verified: true, x: 5, y: 68, phase: 1.2, amp: 6, saved: '$10' },
   { id: 'f3', name: 'Camera Kit', price: '$35/hr', type: 'camera', rating: '5.0', distance: '1.2 mi', vibe: 'Street photography starter.', deposit: '$80', instant: true, verified: true, x: 68, y: 60, phase: 2.4, amp: 4, saved: '$20' },
-  { id: 'f4', name: 'Scooter Pro', price: '$12/hr', type: 'scooter', rating: '4.7', distance: '0.4 mi', vibe: 'Zip through the neighborhood.', deposit: '$25', instant: true, verified: false, x: 14, y: 22, phase: 0.8, amp: 5, saved: null },
+  { id: 'f4', name: 'Scooter Pro', price: '$12/hr', type: 'scooter', rating: '4.7', distance: '0.4 mi', vibe: 'Zip through the neighborhood.', deposit: '$25', instant: true, verified: false, x: 14, y: 38, phase: 0.8, amp: 5, saved: null },
   { id: 'f5', name: 'Drill Set', price: '$8/hr', type: 'tool', rating: '4.9', distance: '0.8 mi', vibe: 'Fix that shelf. Finally.', deposit: '$40', instant: true, verified: true, x: 60, y: 82, phase: 3.6, amp: 4, saved: '$10' },
 ];
 
