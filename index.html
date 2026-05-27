@@ -7,6 +7,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    if (window.location.search.includes('noframe') || 
+        window.location.search.includes('chrome=false') || 
+        /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
+      document.documentElement.classList.add('no-device-frame');
+    }
+  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body, #root { height: 100%; }
@@ -29,7 +36,7 @@
       --wrapper-bg: #E5E2DC;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 1024px) {
       :root {
         --device-width: 100%;
         --device-height: 100%;
@@ -44,6 +51,22 @@
       .simulated-chrome {
         display: none !important;
       }
+    }
+
+    html.no-device-frame :root,
+    html.no-device-frame {
+      --device-width: 100%;
+      --device-height: 100%;
+      --device-radius: 0px;
+      --device-shadow: none;
+      --wrapper-padding: 0px;
+      --wrapper-bg: transparent;
+    }
+    html.no-device-frame body {
+      overflow: hidden;
+    }
+    html.no-device-frame .simulated-chrome {
+      display: none !important;
     }
 
     @keyframes spin3 { to { transform: rotate(360deg); } }
