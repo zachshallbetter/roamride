@@ -1,7 +1,7 @@
 // RoamRide Unified — App shell: expedition field home + all flows
 
 function UniApp() {
-  const [state, setState] = React.useState(() => localStorage.getItem('rr_onboarded') ? 'field' : 'onboarding');
+  const [state, setState] = React.useState('field');
   const [focused, setFocused] = React.useState(null);
   const [focusedItem, setFocusedItem] = React.useState(null);
   const [activeItem, setActiveItem] = React.useState(null);
@@ -79,7 +79,6 @@ function UniApp() {
       case 'ownerPrice': return <OwnerPrice nav={nav} />;
       case 'ownerPayout': return <OwnerPayout nav={nav} />;
       case 'ownerReview': return <OwnerReview nav={nav} />;
-      case 'onboarding': return <VibeCalibration onComplete={(vibes) => { localStorage.setItem('rr_onboarded', '1'); setState('field'); }} />;
       default: return null;
     }
   };
