@@ -199,6 +199,8 @@ function IOSDevice({
       fontFamily: '-apple-system, system-ui, sans-serif',
       WebkitFontSmoothing: 'antialiased',
       transition: 'all 0.3s ease',
+      maxHeight: '100%',
+      maxWidth: '100%',
     }}>
       {/* dynamic island */}
       <div className="simulated-chrome" style={{
