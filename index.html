@@ -1,59 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  
+
   <!-- SEO & Brand Metadata -->
   <title>RoamRide — On-Demand Micro-Adventures</title>
-  <meta name="description" content="Tactile on-demand rentals. Explore, rent, and share e-bikes, paddleboards, cameras, and scooters instantly with zero friction." />
+  <meta name="description"
+    content="Tactile on-demand rentals. Explore, rent, and share e-bikes, paddleboards, cameras, and scooters instantly with zero friction." />
   <meta name="theme-color" content="#FF6B35" />
-  
+
   <!-- OpenGraph / Facebook Sharing -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="RoamRide — On-Demand Micro-Adventures" />
-  <meta property="og:description" content="Tactile on-demand rentals. Explore, rent, and share e-bikes, paddleboards, cameras, and scooters instantly with zero friction." />
-  <meta property="og:image" content="https://roamride.vercel.app/favicon.png" />
+  <meta property="og:description"
+    content="Tactile on-demand rentals. Explore, rent, and share e-bikes, paddleboards, cameras, and scooters instantly with zero friction." />
   <meta property="og:url" content="https://roamride.vercel.app/" />
-  
+
   <!-- Twitter Sharing -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="RoamRide — On-Demand Micro-Adventures" />
-  <meta name="twitter:description" content="Tactile on-demand rentals. Explore, rent, and share e-bikes, paddleboards, cameras, and scooters instantly with zero friction." />
-  <meta name="twitter:image" content="https://roamride.vercel.app/favicon.png" />
-  
+  <meta name="twitter:description"
+    content="Tactile on-demand rentals. Explore, rent, and share e-bikes, paddleboards, cameras, and scooters instantly with zero friction." />
+
   <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="apple-touch-icon" href="favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
   <script>
-    if (window.location.search.includes('noframe') || 
-        window.location.search.includes('chrome=false') || 
-        /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
+    if (window.location.search.includes('noframe') ||
+      window.location.search.includes('chrome=false') ||
+      /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
       document.documentElement.classList.add('no-device-frame');
     }
   </script>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body, #root { height: 100%; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body,
+    #root {
+      height: 100%;
+    }
+
     body {
       font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
       -webkit-font-smoothing: antialiased;
       background: #E5E2DC;
       overflow: auto;
     }
-    button, input { font-family: inherit; }
-    ::-webkit-scrollbar { display: none; }
-    input::placeholder { color: #C0BCB6; }
+
+    button,
+    input {
+      font-family: inherit;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    input::placeholder {
+      color: #C0BCB6;
+    }
 
     :root {
       --device-width: 402px;
       --device-height: 874px;
       --device-radius: 48px;
-      --device-shadow: 0 40px 80px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.12);
+      --device-shadow: 0 40px 80px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(0, 0, 0, 0.12);
       --wrapper-padding: 20px;
       --wrapper-bg: #E5E2DC;
     }
@@ -67,9 +92,11 @@
         --wrapper-padding: 0px;
         --wrapper-bg: transparent;
       }
+
       body {
         overflow: hidden;
       }
+
       .simulated-chrome {
         display: none !important;
       }
@@ -84,32 +111,128 @@
       --wrapper-padding: 0px;
       --wrapper-bg: transparent;
     }
+
     html.no-device-frame body {
       overflow: hidden;
     }
+
     html.no-device-frame .simulated-chrome {
       display: none !important;
     }
 
-    @keyframes spin3 { to { transform: rotate(360deg); } }
-    @keyframes pulse3 { 0%,100% { transform: scale(1); opacity: 0.25; } 50% { transform: scale(1.8); opacity: 0.05; } }
-    @keyframes breathe3 { 0%,100% { transform: scale(1); opacity: 0.4; } 50% { transform: scale(1.15); opacity: 0.2; } }
-    @keyframes popIn3 { 0% { transform: scale(0); } 100% { transform: scale(1); } }
-    @keyframes sheetUp3 { from { transform: translateY(100%); } to { transform: translateY(0); } }
-    @keyframes fadeIn3 { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes slideDown3 { from { transform: translateY(-30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-    @keyframes screenFadeIn5 { from { opacity: 0; transform: scale(0.97); } to { opacity: 1; transform: scale(1); } }
+    @keyframes spin3 {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes pulse3 {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 0.25;
+      }
+
+      50% {
+        transform: scale(1.8);
+        opacity: 0.05;
+      }
+    }
+
+    @keyframes breathe3 {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 0.4;
+      }
+
+      50% {
+        transform: scale(1.15);
+        opacity: 0.2;
+      }
+    }
+
+    @keyframes popIn3 {
+      0% {
+        transform: scale(0);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes sheetUp3 {
+      from {
+        transform: translateY(100%);
+      }
+
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn3 {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideDown3 {
+      from {
+        transform: translateY(-30px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes screenFadeIn5 {
+      from {
+        opacity: 0;
+        transform: scale(0.97);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
     @keyframes burstParticle {
-      0% { transform: translate(-50%, -50%) translate(0, 0) scale(1); opacity: 1; }
-      100% { transform: translate(-50%, -50%) translate(var(--bx), var(--by)) scale(0); opacity: 0; }
+      0% {
+        transform: translate(-50%, -50%) translate(0, 0) scale(1);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translate(-50%, -50%) translate(var(--bx), var(--by)) scale(0);
+        opacity: 0;
+      }
     }
   </style>
 </head>
+
 <body>
   <div id="root"></div>
-  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js"
+    integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"
+    integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"
+    integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y"
+    crossorigin="anonymous"></script>
 
   <!-- Shared foundations -->
   <script type="text/babel" src="ios-frame.jsx"></script>
@@ -135,4 +258,5 @@
   <script type="text/babel" src="unified-field.jsx"></script>
   <script type="text/babel" src="app.jsx"></script>
 </body>
+
 </html>
